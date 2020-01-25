@@ -41,6 +41,7 @@ function App() {
             setQuizProbs={setQuizProbs}
             quizProb={quizProbs[currQuestion]}
             updateQuizProb={updateQuizProb}
+            complete={currQuestion/quizProbs.length}
           />
         }
       </div>

@@ -1,17 +1,36 @@
 import React from 'react';
-import { Typography, Button } from '@material-ui/core';
+import { Typography, Button, LinearProgress, makeStyles } from '@material-ui/core';
 import '../css/QuizQuestion.css';
 
+const useStyles = makeStyles(theme => ({
+    root: {
+        width: '100%',
+        '& > * + *': {
+            marginTop: theme.spacing(2),
+        },
+    },
+}));
+
 function QuizQuestion(props) {
+    const classes = useStyles();
+
     return (
         <div class="quizquestion-container">
-            <Typography
-                paragraph={true}
-                align='center'
-                variant='h4'
-            >
-                {props.quizProb.title}
-            </Typography>
+            <div>
+                <Typography
+                    align='center'
+                    variant='h4'
+                >
+                    {props.quizProb.title}
+                </Typography>
+                <div className={classes.root}>
+                    <LinearProgress
+                        color='primary'
+                        value={props.complete}
+                        variant='determinate'
+                    />
+                </div>
+            </div>
             <Typography
                 paragraph={true}
                 align='center'
@@ -21,7 +40,15 @@ function QuizQuestion(props) {
             </Typography>
             <div class="quizquestion-button-container">
                 {props.quizProb.choices.map((choice, index) =>
-                    <Button key={index}>{choice.text}</Button>
+                    <Button
+                        fullWidth={true}
+                        size='large'
+                        variant='contained'
+                        color='primary'
+                        key={index}
+                    >
+                        {choice.text}
+                    </Button>
                 )}
             </div>
         </div>
