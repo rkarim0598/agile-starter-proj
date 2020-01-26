@@ -46,6 +46,7 @@ function QuizQuestion(props) {
                         variant='contained'
                         color='primary'
                         key={index}
+                        onClick={() => props.updateUserAttribs(choice.attributes)}
                     >
                         {choice.text}
                     </Button>
