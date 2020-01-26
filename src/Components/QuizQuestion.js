@@ -31,14 +31,15 @@ function QuizQuestion(props) {
                     />
                 </div>
             </div>
-            <Typography
-                paragraph={true}
-                align='center'
-                variant='subheading'
-            >
-                {props.quizProb.text}
-            </Typography>
-            <div class="quizquestion-button-container">
+            <div className="quizquestion-text-container">
+                <Typography
+                    align='center'
+                    variant='subheading'
+                >
+                    {props.quizProb.text}
+                </Typography>
+            </div>
+            <div className="quizquestion-button-container">
                 {props.quizProb.choices.map((choice, index) =>
                     <Button
                         className="quizquestion-button"

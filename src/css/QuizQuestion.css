@@ -19,3 +19,8 @@
 .quizquestion-button {
     height: 20%;
 }
+
+.quizquestion-text-container {
+    width: 90%;
+    text-align: center;
+}
