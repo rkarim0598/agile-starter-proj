@@ -8,13 +8,13 @@ function App() {
   const [quizProbs, setQuizProbs] = useState([
     {
       title: 'Problem 1',
-      text: 'The government...',
+      text: "The government comes to you with the desire to place a backdoor in your program. They hope to use this technology to catch terrorists before they’re able to enact their plots. However, you have concerns that the government could use this for other, more nefarious ideas. What do you tell them?",
       answer: null,
       choices: [
-        { id: '1-1', text: 'text', attributes: [0,0,0,0,0,0] },
-        { id: '1-2', text: 'text', attributes: [0,0,0,0,0,0] },
-        { id: '1-3', text: 'text', attributes: [0,0,0,0,0,0] },
-        { id: '1-4', text: 'text', attributes: [0,0,0,0,0,0] },
+        { id: '1-1', text: "Install the backdoor; the country’s safety is important.", attributes: [-1,-1,-1,0,0,0] },
+        { id: '1-2', text: "Install the backdoor; perhaps this could lead to more government funding.", attributes: [-1,-1,-1,1,0,0] },
+        { id: '1-3', text: "Don’t install the backdoor; customer privacy is essential to the company.", attributes: [1,1,1,0,0,0] },
+        { id: '1-4', text: "Don’t install the backdoor; you never liked the government anyways.", attributes: [1,1,0,0,0,0] },
       ]
     },
     {
