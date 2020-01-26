@@ -10,8 +10,12 @@
 .quizquestion-button-container {
     display: flex;
     width: 90%;
-    height: 40%;
+    height: 55%;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+}
+
+.quizquestion-button {
+    height: 20%;
 }

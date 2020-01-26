@@ -41,6 +41,7 @@ function QuizQuestion(props) {
             <div class="quizquestion-button-container">
                 {props.quizProb.choices.map((choice, index) =>
                     <Button
+                        className="quizquestion-button"
                         fullWidth={true}
                         size='large'
                         variant='contained'
