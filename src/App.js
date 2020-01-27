@@ -104,10 +104,30 @@ function App() {
 
   const attribs = ['Privacy', 'User Safety', 'Transparency', 'Greed', 'Efficiency', 'Employee Wellbeing'];
 
+  const [similarCompany, setSimilarCompany] = useState('Filler');
   const updateUserAttribs = (update) => {
-    const newUserAttribs = update.map((val, index) => userAttribs[index] + val);
+	const newUserAttribs = update.map((val, index) => userAttribs[index] + val);
     setUserAttribs(newUserAttribs);
     setCurrQuestion(currQuestion + 1);
+	let bestCompany = 'Amazon';
+	let bestDist = 1000;
+	if (currQuestion >= quizProbs.length - 1){
+		Object.keys(companyAttribs).forEach(function(item){
+			let currAtt = companyAttribs[item];
+			let dist = 0
+			for (let i=0; i<currAtt.length; i++){
+				dist += Math.abs(currAtt[i] - userAttribs[i]);
+			}
+			//console.log('dist: ', dist);
+			if (dist < bestDist){
+				bestDist = dist;
+				bestCompany = item;
+			}
+		});
+		//console.log('best: ', bestCompany);
+		setSimilarCompany(bestCompany);
+		//console.log(similarCompany);
+	}
   }
 
   const resetQuiz = () => {
@@ -133,6 +153,7 @@ function App() {
               <Results
                 userAttribs={userAttribs}
                 attribs={attribs}
+				similarCompany={similarCompany}
                 resetQuiz={resetQuiz}
                 setUserAttribs={setUserAttribs}
               />

@@ -17,7 +17,7 @@ function Results(props) {
         res = res === null ? [] : res;
 
         // substitute 'Amazon' for whatever company is deemed to be closest to user values
-        res = ['Amazon', ...res];
+        res = [props.similarCompany, ...res];
         setCompanyResults(res); // update company results (this will be displayed as 'past matches' or something)
         localStorage.setItem('tethical-results', JSON.stringify(res)); // update local storage with new results
     }, []);
@@ -33,7 +33,7 @@ function Results(props) {
 
     return (
         <div class="results-container">
-            <Typography paragraph={true} align='center' variant='h4'>You got: insert company name result here. </Typography>
+            <Typography paragraph={true} align='center' variant='h4'>You got: {props.similarCompany} </Typography>
             <div className="results-description-text">
                 <Typography align='center' variant='body1'>Here are the results consistent with your answers: </Typography>
             </div>
