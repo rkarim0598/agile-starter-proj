@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Introduction from './Components/Introduction';
 import QuizQuestion from './Components/QuizQuestion';
+import Results from './Components/Results'
 import './App.css';
 
 function App() {
@@ -111,12 +112,17 @@ function App() {
                 complete={currQuestion / quizProbs.length * 100}
               />
               :
-              <>
-                <div>FINITO</div>
-                {userAttribs.map((attrib, index) =>
-                  <div>{attribs[index]}: {attrib}</div>
-                )}
-              </>
+              //<>
+                <Results
+                    userAttribs={userAttribs}
+                    attribs={attribs}
+                    setCurrQuestion={setCurrQuestion}
+                    setUserAttribs={setUserAttribs}/>
+      //<div>FINITO</div>
+                //{userAttribs.map((attrib, index) =>
+                  //<div>{attribs[index]}: {attrib}</div>
+                //)}
+              //</>
             }
           </>
         }
