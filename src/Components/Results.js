@@ -20,7 +20,7 @@ function Results(props) {
         res = [props.similarCompany, ...res];
         setCompanyResults(res); // update company results (this will be displayed as 'past matches' or something)
         localStorage.setItem('tethical-results', JSON.stringify(res)); // update local storage with new results
-    }, []);
+    }, [props.similarCompany]);
 
     const formattedData = [
         { attrib: 'Privacy', val: props.userAttribs[0] },
