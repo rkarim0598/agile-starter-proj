@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { Typography, Button } from '@material-ui/core';
+import {
+    Radar, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis,
+} from 'recharts';
 import '../css/Results.css';
 // import scores from App.js
 // import names from App.js
@@ -19,6 +22,15 @@ function Results(props) {
         localStorage.setItem('tethical-results', JSON.stringify(res)); // update local storage with new results
     }, []);
 
+    const formattedData = [
+        { attrib: 'Privacy', val: props.userAttribs[0] },
+        { attrib: 'User Safety', val: props.userAttribs[1] },
+        { attrib: 'Transparency', val: props.userAttribs[2] },
+        { attrib: 'Greed', val: props.userAttribs[3] },
+        { attrib: 'Efficiency', val: props.userAttribs[4] },
+        { attrib: 'Employee Wellbeing', val: props.userAttribs[5] }
+    ];
+
     return (
         <div class="results-container">
             <Typography paragraph={true} align='center' variant='h4'>You got: insert company name result here. </Typography>
@@ -33,16 +45,22 @@ function Results(props) {
             </>
             <div>
                 <Typography align='center' paragraph={true} variant='h5'>Past Company Matches</Typography>
-                {companyResults.slice(0, 3).map(company =>
+                {companyResults.slice(0, 3).map((company, index) =>
                     <Typography
                         align='center'
                         variant='body1'
-                        key={company}
+                        key={index}
                     >
                         {company}
                     </Typography>
                 )}
             </div>
+            <RadarChart cx={150} cy={125} outerRadius={75} width={350} height={250} data={formattedData}>
+                <PolarGrid />
+                <PolarAngleAxis dataKey="attrib" />
+                <PolarRadiusAxis />
+                <Radar name="Graph" dataKey="val" stroke="red" fill="red" fillOpacity={0.6} />
+            </RadarChart>
         </div>
     )
 }

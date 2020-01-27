@@ -89,18 +89,18 @@ function App() {
   const [currQuestion, setCurrQuestion] = useState(0);
   const [userAttribs, setUserAttribs] = useState([5, 5, 5, 5, 5, 5]);
 
-  // const companyAttribs = {
-  //   'Facebook': [1, 4, 1, 7, 5, 10],
-  //   'Apple': [7, 10, 6, 9, 10, 3],
-  //   'Microsoft': [3, 6, 8, 3, 6, 8],
-  //   'Google': [5, 7, 10, 4, 8, 9],
-  //   'Boeing': [8, 1, 4, 8, 3, 4],
-  //   'Twitter': [2, 5, 5, 2, 2, 7],
-  //   'Amazon': [10, 9, 7, 10, 9, 2],
-  //   'Uber': [6, 2, 3, 5, 7, 1],
-  //   'Tesla': [9, 3, 9, 6, 4, 6],
-  //   'US Gov': [4, 8, 2, 1, 1, 5]
-  // }
+  const companyAttribs = {
+    'Facebook': [1, 4, 1, 7, 5, 10],
+    'Apple': [7, 10, 6, 9, 10, 3],
+    'Microsoft': [3, 6, 8, 3, 6, 8],
+    'Google': [5, 7, 10, 4, 8, 9],
+    'Boeing': [8, 1, 4, 8, 3, 4],
+    'Twitter': [2, 5, 5, 2, 2, 7],
+    'Amazon': [10, 9, 7, 10, 9, 2],
+    'Uber': [6, 2, 3, 5, 7, 1],
+    'Tesla': [9, 3, 9, 6, 4, 6],
+    'US Gov': [4, 8, 2, 1, 1, 5]
+  }
 
   const attribs = ['Privacy', 'User Safety', 'Transparency', 'Greed', 'Efficiency', 'Employee Wellbeing'];
 
