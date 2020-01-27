@@ -37,10 +37,10 @@ function Results(props) {
             <div className="results-description-text">
                 <Typography align='center' variant='body1'>Here are the results consistent with your answers: </Typography>
             </div>
-            <Button variant="contained" color="primary" align='center' onClick={() => props.resetQuiz()}>Retake Quiz</Button>
+            <Button id="thebutton" variant="contained" color="primary" align='center' onClick={() => props.resetQuiz()}>Retake Quiz</Button>
             <>
                 {props.userAttribs.map((attrib, index) =>
-                    <div>{props.attribs[index]}: {attrib}</div>
+                    <div class="att_class">{props.attribs[index]}: {attrib}</div>
                 )}
             </>
             <div>

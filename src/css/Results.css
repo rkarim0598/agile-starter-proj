@@ -10,3 +10,19 @@
 .introduction-description-text {
     width: 80%;
 }
+
+.att_class {
+	margin: 10px;
+	text-align: center
+}
+h5 {
+	margin-top: 15px;
+}
+#thebutton {
+	position: absolute;
+	bottom: 10px;
+	left: 10px;
+}
+.recharts-wrapper {
+	margin: auto;
+}
