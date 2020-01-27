@@ -18,11 +18,25 @@
 h5 {
 	margin-top: 15px;
 }
-#thebutton {
+/* #thebutton {
 	position: absolute;
 	bottom: 10px;
 	left: 10px;
-}
+} */
 .recharts-wrapper {
-	margin: auto;
+    margin-bottom: 0px;
+    margin-top: 0px;
+    margin-left: 35px;
+    /* margin-right: auto; */
+}
+
+.results-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-self: center;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+
 }
