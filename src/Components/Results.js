@@ -39,7 +39,6 @@ function Results(props) {
             <RadarChart cx={150} cy={125} outerRadius={75} width={350} height={250} data={formattedData}>
                 <PolarGrid />
                 <PolarAngleAxis dataKey="attrib" />
-                <PolarRadiusAxis />
                 <Radar name="Graph" dataKey="val" stroke="red" fill="red" fillOpacity={0.6} />
             </RadarChart>
             <div>
@@ -47,7 +46,7 @@ function Results(props) {
                 {companyResults.slice(0, 3).map((company, index) =>
                     <Typography
                         align='center'
-                        variant='body1'
+                        variant='h6'
                         key={index}
                     >
                         {company}
