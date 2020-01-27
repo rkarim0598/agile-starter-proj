@@ -23,12 +23,12 @@ function Results(props) {
     }, [props.similarCompany]);
 
     const formattedData = [
-        { attrib: 'Privacy', val: props.userAttribs[0] },
+        { attrib: 'Employee Wellbeing', val: props.userAttribs[0] },
         { attrib: 'User Safety', val: props.userAttribs[1] },
         { attrib: 'Transparency', val: props.userAttribs[2] },
         { attrib: 'Greed', val: props.userAttribs[3] },
         { attrib: 'Efficiency', val: props.userAttribs[4] },
-        { attrib: 'Employee Wellbeing', val: props.userAttribs[5] }
+        { attrib: 'Privacy', val: props.userAttribs[5] }
     ];
 
     return (
